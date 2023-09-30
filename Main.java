@@ -17,7 +17,7 @@ public class Main {
     private static void processFile(String filePath) {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
-            br.readLine(); // Skip the header line
+
 
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
@@ -43,7 +43,7 @@ public class Main {
                     System.out.println(name + " (" + position + "): Less than 10 hours between shifts but greater than 1 hour");
                 }
 
-                //  Check for more than 14 hours in a single shift
+                //  Checking for more than 14 hours in a single shift
                 if ((endTime.getTime() - startTime.getTime()) / (60 * 60 * 1000) > 14) {
                     System.out.println(name + " (" + position + "): Worked for more than 14 hours in a single shift");
                 }
